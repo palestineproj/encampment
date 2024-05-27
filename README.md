@@ -25,64 +25,58 @@ Wayne State University is currently investing in weapon-manufacturing companies 
         <br>
         Members of the Liberation Zone
     </p>
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
 
-    <form id="emailForm">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" required>
-        
-        <label for="role">Your Role:</label>
-        <select id="role">
-            <option value="Student">Student</option>
-            <option value="Alumni">Alumni</option>
-            <option value="Administrator">Administrator</option>
-            <option value="Faculty">Faculty</option>
-            <option value="Community Member">Community Member</option>
-            <option value="Concerned Citizen">Concerned Citizen</option>
-        </select>
+    <label for="role">Role:</label>
+    <input type="text" id="role" name="role"><br><br>
 
-        <label for="wsuMember">Are you a member of Wayne State University?</label>
-        <select id="wsuMember">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+    <label for="wsuMember">Are you a WSU Member?</label>
+    <select id="wsuMember" name="wsuMember">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select><br><br>
 
-        <button type="button" id="generateEmailLinks">Generate Email Links</button>
-    </form>
+    <button type="button" id="generateEmailLinks">Generate Email Links</button>
+</form>
 
-    <div id="emailLinks"></div>
+<div id="emailLinks"></div>
 
-    <script>
-        document.getElementById('generateEmailLinks').addEventListener('click', function () {
-            const name = document.getElementById('name').value;
-            const role = document.getElementById('role').value;
-            const wsuMember = document.getElementById('wsuMember').value;
-            const recipients = 'president@wayne.edu,gx5460@wayne.edu,hp8073@wayne.edu,jenelle.michaels@wayne.edu,lbeale@wayne.edu,bgielczyk@wayne.edu,ar6659@wayne.edu, isnotrealwsu@gmail.com';
-            const subject = 'URGENT: Support Pro-Palestinian Encampment and Divest from Israel';
+<script>
+    document.getElementById('generateEmailLinks').addEventListener('click', function () {
+        const name = document.getElementById('name').value;
+        const role = document.getElementById('role').value;
+        const wsuMember = document.getElementById('wsuMember').value;
+        const recipients = 'president@wayne.edu,gx5460@wayne.edu,hp8073@wayne.edu,jenelle.michaels@wayne.edu,lbeale@wayne.edu,bgielczyk@wayne.edu,ar6659@wayne.edu,isnotrealwsu@gmail.com';
+        const subject = 'URGENT: Support Pro-Palestinian Encampment and Divest from Israel';
 
-            let body = `${name}\n${role}\n`;
+        let body = `${name}\n${role}\n`;
 
-            if (wsuMember === 'Yes') {
-                body += 'Wayne State University\n';
-            }
+        if (wsuMember === 'Yes') {
+            body += 'Wayne State University\n';
+        }
 
-            body += '\nDear Wayne State University Administration,\n\n';
-            body += 'I am writing to express my unequivocal support for the encampment and its commitments to divestment. I implore you, President Espy; Board of Governors member, Budget and Finance Committee Chair, and Audit Subcommittee member, Bryan C. Barnhill II, and Board of Governors member and Student Afairs Committee Chair, Danielle Atkinson; Foundation Board President, James Anderson, Foundation Board member and President of Academic Senate, Linda Beale, and Foundation Board member and Managing Director, Investment Officer, Elizabeth Goldsberry; Chief of Financial Officer, Interim Senior Vice President for Business Affairs, Senior Associate Vice President for Finance and Business, Bethany Gielczyk; Assistant Vice President of Cash Management and Investments, Alana Askew, to meet with students. Wayne State University is currently investing in weapon-manufacturing companies that are responsible for violence and destruction around the world. Disturbingly, these investments often target the families and communities of your own students. The arrest of a Black student and the physical assault of your Muslim and Jewish students by campus police and undercover police is a critical issue that is inextricably tied to the Israeli entity— especially through Wayne State University Chief Holt’s delegation trip to Israel.\n\n';
-            body += '1. Divestment from Weapons-Manufacturing Companies: Particularly SSgA S&P 500 index fund war profiteers that include Boeing, General Dynamics, L3Harris Technolgoies, Lockheed Martin, and Northrop Grumman;\n';
-            body += '2. Full Disclosure of Investments: Wayne State University should provide detailed reports on all investments, including those in index funds, which are currently not available in public budget reports;\n\n';
-            body += '3. Cease Delegation Trips to Israel: Publicly commit that WSUPD will no longer participate in delegation trips to Israel, discard strategies and training received since Chief Holt's trip to Israel in 2019, and institutionally adopt the remaining action items of Student Senate Resolution 2324-24.\n\n';
-            body += '4. Ceasefire Resolution: Issue a statement on behalf of the institution for a ceasefire in Gaza, acklowledgement of a genocide being carried out by the US and Israel against the indiginous Palestinian population, and denouncement of institutional bias created by WSU police delegation trip to Israel and silence on a rapidly destructive genocide induced humanitarian crisis.\n\n';
+        body += '\nDear Wayne State University Administration,\n\n';
+        body += 'I am writing to express my unequivocal support for the encampment and its commitments to divestment. I implore you, President Espy; Board of Governors member, Budget and Finance Committee Chair, and Audit Subcommittee member, Bryan C. Barnhill II, and Board of Governors member and Student Afairs Committee Chair, Danielle Atkinson; Foundation Board President, James Anderson, Foundation Board member and President of Academic Senate, Linda Beale, and Foundation Board member and Managing Director, Investment Officer, Elizabeth Goldsberry; Chief of Financial Officer, Interim Senior Vice President for Business Affairs, Senior Associate Vice President for Finance and Business, Bethany Gielczyk; Assistant Vice President of Cash Management and Investments, Alana Askew, to meet with students. Wayne State University is currently investing in weapon-manufacturing companies that are responsible for violence and destruction around the world. Disturbingly, these investments often target the families and communities of your own students. The arrest of a Black student and the physical assault of your Muslim and Jewish students by campus police and undercover police is a critical issue that is inextricably tied to the Israeli entity— especially through Wayne State University Chief Holt’s delegation trip to Israel.\n\n';
+        body += '1. Divestment from Weapons-Manufacturing Companies: Particularly SSgA S&P 500 index fund war profiteers that include Boeing, General Dynamics, L3Harris Technolgoies, Lockheed Martin, and Northrop Grumman;\n';
+        body += '2. Full Disclosure of Investments: Wayne State University should provide detailed reports on all investments, including those in index funds, which are currently not available in public budget reports;\n\n';
+        body += '3. Cease Delegation Trips to Israel: Publicly commit that WSUPD will no longer participate in delegation trips to Israel, discard strategies and training received since Chief Holt\'s trip to Israel in 2019, and institutionally adopt the remaining action items of Student Senate Resolution 2324-24.\n\n';
+        body += '4. Ceasefire Resolution: Issue a statement on behalf of the institution for a ceasefire in Gaza, acklowledgement of a genocide being carried out by the US and Israel against the indiginous Palestinian population, and denouncement of institutional bias created by WSU police delegation trip to Israel and silence on a rapidly destructive genocide induced humanitarian crisis.\n\n';
 
-            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipients}&su=${subject}&body=${encodeURIComponent(body)}`;
-            const defaultMailAppLink = `mailto:${recipients}?subject=${subject}&body=${encodeURIComponent(body)}`;
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipients}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const defaultMailAppLink = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            const emailLinks = `
-                <p><a href="${gmailLink}" target="_blank">Open in Gmail (Desktop Users) </a></p>
-                <p><a href="${defaultMailAppLink}">Open in Default Mail App</a></p>
-            `;
+        const emailLinks = `
+            <p><a href="${gmailLink}" target="_blank">Open in Gmail (Desktop Users)</a></p>
+            <p><a href="${defaultMailAppLink}">Open in Default Mail App</a></p>
+        `;
 
-            document.getElementById('emailLinks').innerHTML = emailLinks;
-        });
-    </script>
+        document.getElementById('emailLinks').innerHTML = emailLinks;
+    });
+</script>
+
+
 </body>
 </html>
 
